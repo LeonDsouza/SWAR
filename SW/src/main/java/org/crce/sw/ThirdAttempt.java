@@ -19,13 +19,13 @@ import org.apache.jena.sparql.engine.http.QueryExceptionHTTP;
 public class ThirdAttempt {
     public static void main(String [] args){
         String service = "http://dbpedia.org/sparql";
-        String query = "ASK{ }";
+        String query = "ASK{ }";  //ask query
         
         QueryExecution qe = QueryExecutionFactory.sparqlService(service, query);
-        qe.setTimeout(1000000000);
+        qe.setTimeout(1000000000);  //increase timeout! Slow Internet Problems for me!
         try{
         if(qe.execAsk()){
-            System.out.println(service+ " is  UP");
+            System.out.println(service+ " is  UP");  //check if service works
         }
         }catch(QueryExceptionHTTP e){
             System.out.println(service + " is down");

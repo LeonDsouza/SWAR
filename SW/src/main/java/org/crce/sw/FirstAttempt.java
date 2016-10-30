@@ -23,14 +23,14 @@ public class FirstAttempt {
     public static void main(String[] args) {
 
         Model m = ModelFactory.createDefaultModel();
-        String NS = "http://example.com/test/";
+        String NS = "http://example.com/test/";  //parent URI
         
-        Resource r = m.createResource(NS + "r");
-        Property p = m.createProperty(NS + "p");
+        Resource r = m.createResource(NS + "r");  //create resource under parent URI
+        Property p = m.createProperty(NS + "p");  //create property for that resource
         
         r.addProperty(p, "First Test", XSDDatatype.XSDstring);
         
-        m.write(System.out, "Turtle");
+        m.write(System.out, "Turtle");  //write to System.out in Turtle format
 
     }
 }

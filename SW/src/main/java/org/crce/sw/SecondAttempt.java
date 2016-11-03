@@ -34,11 +34,12 @@ public class SecondAttempt {
 
         ResultSet results = exec.execSelect();
 
+        ResultSetFormatter.out(results); //displays results in table
         while (results.hasNext()) {
 
             System.out.println(results.next().get("abstract").toString());
         }
 
-        ResultSetFormatter.out(results);
+        //ResultSetFormatter.out(results);
     }
 }

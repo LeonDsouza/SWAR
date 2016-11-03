@@ -18,7 +18,7 @@ import org.apache.jena.sparql.engine.http.QueryExceptionHTTP;
  */
 public class ThirdAttempt {
     public static void main(String [] args){
-        String service = "http://dbpedia.org/sparql";
+        String service = "http://dbpedia.org/sparql";  //give name of sparql endpoint you want to check here
         String query = "ASK{ }";  //ask query
         
         QueryExecution qe = QueryExecutionFactory.sparqlService(service, query);

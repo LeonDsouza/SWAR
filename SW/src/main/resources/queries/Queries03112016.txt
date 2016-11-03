@@ -61,3 +61,12 @@ Now trying to modify that query as required....
 
 >>>Output
 Gives List of all Country Names
+
+
+##Get information about all countries (As per Research paper)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n "
+                + "SELECT * {?Subject rdf:type <http://dbpedia.org/ontology/Country> . ?Subject ?Predicate ?Object } ORDER BY ?Subject 
+
+>>>Output
+Gives all information of all countries including redundancies and 19th century irrelevant data

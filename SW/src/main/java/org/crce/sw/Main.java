@@ -13,5 +13,7 @@ public class Main {
     public static void main(String [] args){
         FetchCountryData fetchCountryData = new FetchCountryData();
         fetchCountryData.fetchData();
+        FetchCountriesData fetchCountriesData = new FetchCountriesData();
+        fetchCountriesData.getCountriesInformation();
     }
 }

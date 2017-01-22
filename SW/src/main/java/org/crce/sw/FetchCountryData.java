@@ -5,6 +5,11 @@
  */
 package org.crce.sw;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.jena.query.ParameterizedSparqlString;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -50,12 +55,17 @@ public class FetchCountryData {
         //exec.setTimeout(10000000);
         exec.setTimeout(-123);
         ResultSet results = exec.execSelect();
-        ResultSetFormatter.out(results);
+        //ResultSetFormatter.out(results);
+        try {
+            ResultSetFormatter.outputAsCSV(new FileOutputStream(new File("C:/Users/leons/Desktop/Countries.csv")), results);
 //        while (results.hasNext()) {
 //            System.out.println(results.next());
 //            System.out.println("Entered here");
 //            count = count + 1;
 //            System.out.println(count);
 //        }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(FetchCountryData.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
